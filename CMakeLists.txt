@@ -3,4 +3,9 @@ project(VirtualMemory)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(VirtualMemory main.cpp)
+add_executable(VirtualMemory main.cpp
+        VirtualMemoryManagement.cpp
+        VirtualMemoryManagement.h
+        Page.cpp
+        Page.h
+)

@@ -1,0 +1,4 @@
+# ninja log v5
+1	11	1711267597760442846	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	32cd0a4748892ce8
+1	803	1711267598551447793	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+803	844	1711267598591448043	VirtualMemory	66c798695c37d3af
