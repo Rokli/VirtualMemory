@@ -1,4 +1,23 @@
 # ninja log v5
-1	11	1711267597760442846	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	32cd0a4748892ce8
-1	803	1711267598551447793	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
-803	844	1711267598591448043	VirtualMemory	66c798695c37d3af
+1	26	1711367633609977220	CMakeFiles/VirtualMemory.dir/Page.cpp.o	4a002d9c83d6359c
+1	523	1711371417392385928	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	e73f51ad14f2a0a7
+1	960	1711371417828394299	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+960	1004	1711371417871395124	VirtualMemory	63305f7fa66f61a4
+1	509	1711371487355729071	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	e73f51ad14f2a0a7
+1	976	1711371487822738036	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+976	1024	1711371487869738939	VirtualMemory	63305f7fa66f61a4
+1	509	1711371673898266427	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	e73f51ad14f2a0a7
+0	940	1711371674328274150	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+940	988	1711371674375274994	VirtualMemory	63305f7fa66f61a4
+1	523	1711371701598763915	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	e73f51ad14f2a0a7
+1	941	1711371702015771405	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+941	987	1711371702061772231	VirtualMemory	63305f7fa66f61a4
+1	526	1711371781095191636	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	e73f51ad14f2a0a7
+0	975	1711371781544199700	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+976	1033	1711371781601200724	VirtualMemory	63305f7fa66f61a4
+1	544	1711371791131371881	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	e73f51ad14f2a0a7
+1	961	1711371791546379335	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+961	1005	1711371791590380125	VirtualMemory	63305f7fa66f61a4
+1	523	1711371828991051825	CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o	e73f51ad14f2a0a7
+1	936	1711371829404059242	CMakeFiles/VirtualMemory.dir/main.cpp.o	7ee398b2758bdb9a
+937	980	1711371829448060032	VirtualMemory	63305f7fa66f61a4

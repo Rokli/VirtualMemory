@@ -55,7 +55,7 @@ build CMakeFiles/VirtualMemory.dir/main.cpp.o: CXX_COMPILER__VirtualMemory_unsca
   OBJECT_DIR = CMakeFiles/VirtualMemory.dir
   OBJECT_FILE_DIR = CMakeFiles/VirtualMemory.dir
 
-build CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o: CXX_COMPILER__VirtualMemory_unscanned_Debug /home/hikiray/CLionProjects/VirtualMemory/cmake-build-debug/VirtualMemoryManagement.cpp || cmake_object_order_depends_target_VirtualMemory
+build CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o: CXX_COMPILER__VirtualMemory_unscanned_Debug /home/hikiray/CLionProjects/VirtualMemory/VirtualMemoryManagement.cpp || cmake_object_order_depends_target_VirtualMemory
   DEP_FILE = CMakeFiles/VirtualMemory.dir/VirtualMemoryManagement.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/VirtualMemory.dir
