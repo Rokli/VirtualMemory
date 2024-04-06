@@ -7,7 +7,7 @@ int main() {
     // Проверка git
 //    ifstream ifout("txt.bin",ios_base::binary);
 //    ofstream fout("txt.bin",ios_base::binary);
-//    ifout.read((char*)&tmp,sizeof(int));
+//    ifout.read((char*)&tmp,s  izeof(int));
 //    fout.close();
     VirtualMemoryManagement demo = VirtualMemoryManagement();
     return 0;

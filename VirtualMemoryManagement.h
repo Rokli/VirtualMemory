@@ -11,19 +11,25 @@ using namespace std;
 
 class VirtualMemoryManagement {
 private:
+    ofstream out;
+    ifstream input;
     Page pages[3];
 public:
     VirtualMemoryManagement(string filepath = "memory.bin", int size = 3)
     {
         if(!filesystem::exists(filepath)) {
-            ofstream filememory = ofstream(filepath, ios_base::binary);
+            out = ofstream(filepath, ios_base::binary);
             string VM = "VM";
-            filememory.write((char*)&VM,sizeof(int));
+            out.write((char*)&VM,sizeof(int));
             for (int i = 0; i < 512; i++) {
-                filememory.write((char*)&"0",sizeof(int));
+                out.write((char*)&"0",sizeof(int));
             }
-            filememory.close();
         }
+        else{
+            out.open(filepath, ios_base::binary);
+            input.open(filepath, ios_base::binary);
+        }
+
     }
 };
 
