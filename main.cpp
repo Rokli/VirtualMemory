@@ -10,5 +10,10 @@ int main() {
 //    ifout.read((char*)&tmp,s  izeof(int));
 //    fout.close();
     VirtualMemoryManagement demo = VirtualMemoryManagement();
+    cout << "-----------------" << endl;
+    cout << "Результат операции :" << demo.RecordElemenForIndex(0,21) << endl;
+    cout << "-----------------" << endl;
+    cout << "Результат операции:" << demo.DeterminingPageIndex(0) << endl;
+
     return 0;
 }
