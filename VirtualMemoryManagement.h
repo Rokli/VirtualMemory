@@ -6,29 +6,38 @@
 #include <iostream>
 #include <filesystem>
 #include <fstream>
-#include "Page.h"
+#include "Page.cpp"
 using namespace std;
 
 class VirtualMemoryManagement {
 private:
-    ofstream out;
-    ifstream input;
-    Page pages[3];
+    vector<Page> pages;
 public:
     VirtualMemoryManagement(string filepath = "memory.bin", int size = 3)
     {
         if(!filesystem::exists(filepath)) {
-            out = ofstream(filepath, ios_base::binary);
-            string VM = "VM";
-            out.write((char*)&VM,sizeof(int));
-            for (int i = 0; i < 512; i++) {
-                out.write((char*)&"0",sizeof(int));
+            ofstream recordFile(filepath, ios::out | ios::binary);
+            char V = 'V';
+            char W = 'W';
+            char tmp = '0';
+            recordFile.write((char *) &V, sizeof(char));
+            recordFile.write((char *) &W, sizeof(char));
+            for (int i = 0; i < 512 * size; i++) {
+                recordFile.write((char*)&tmp,sizeof(char));
             }
+            recordFile.close();
         }
-        else{
-            out.open(filepath, ios_base::binary);
-            input.open(filepath, ios_base::binary);
+        // ifstream readFile(filepath, ios::out | ios::binary);
+        for(int i = 0; i < size; i++){
+            vector<int> memoryPage(128);
+            vector<unsigned char> memoryByte(512);
+            Page page{i,memoryByte,memoryPage};
+            this->pages.push_back(page);
         }
+
+        // readFile.close();
+    }
+    void DeterminingPageIndex(){
 
     }
 };
