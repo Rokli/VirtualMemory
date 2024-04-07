@@ -12,9 +12,12 @@ using namespace std;
 class VirtualMemoryManagement {
 private:
     vector<Page> pages;
+    vector<Page> pagesBuffer;
+    int pageLength;
 public:
-    VirtualMemoryManagement(string filepath = "memory.bin", int size = 3)
+    VirtualMemoryManagement(string filepath = "memory.bin", int size = 3, int pageLength = 128)
     {
+        this->pageLength = pageLength;
         if(!filesystem::exists(filepath)) {
             ofstream recordFile(filepath, ios::out | ios::binary);
             char V = 'V';
@@ -34,11 +37,49 @@ public:
             Page page{i,memoryByte,memoryPage};
             this->pages.push_back(page);
         }
+        for(int i = 0; i < size; i++){
+            DeterminingPageIndex(this->pages[i].numberPage);
+        }
 
         // readFile.close();
     }
-    void DeterminingPageIndex(){
+    int DeterminingPageIndex(int index){
+        bool flag = false;
+        for(Page tmp : this->pages){
+            if(tmp.numberPage == index)
+                flag = true;
+        }
+        Page page = this->pages[index];
+        if(flag == false)
+                Page page = this->pages[0];
+        if(page.pageMode){
+            SavePage(page);
+        }
+        page.pageTime = clock();
+        page.pageMode = true;
+        return page.numberPage;
+    }
+    void SavePage(Page page){
+        for(Page tmp: this->pages){
+            if(tmp.numberPage == page.numberPage)
+                this->pages[tmp.numberPage] = page;
+        }
 
+    }
+    bool ReadElementForIndex(int index, int element){
+        int indexElement= DeterminingPageIndex(index);
+        int addres = indexElement % pageLength;
+        element = pages[indexElement].memoryValues[addres];
+        return true;
+    }
+    bool RecordElemenForIndex(int index,int element){
+        int indexElement =DeterminingPageIndex(index);
+        int address = index % pageLength;
+        this->pages[indexElement].memoryValues[address] = element;
+        this->pages[indexElement].memoryByte[address] = 1;
+        this->pages[indexElement].pageMode = true;
+        this->pages[indexElement].pageTime = clock();
+        return true;
     }
 };
 
