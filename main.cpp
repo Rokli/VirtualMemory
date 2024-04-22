@@ -1,19 +1,21 @@
 #include "VirtualMemoryManagement.h"
 using  namespace std;
 int main() {
-    int x = 214214;
-    int tmp;
-    //TODO:
-    // Проверка git
-//    ifstream ifout("txt.bin",ios_base::binary);
-//    ofstream fout("txt.bin",ios_base::binary);
-//    ifout.read((char*)&tmp,s  izeof(int));
-//    fout.close();
     VirtualMemoryManagement demo = VirtualMemoryManagement();
-    cout << "-----------------" << endl;
+    int *element, *el;
+    cout << "---Запись значений с индексами: 0, 55, 23, 23000---" << endl;
     cout << "Результат операции :" << demo.RecordElemenForIndex(0,21) << endl;
-    cout << "-----------------" << endl;
-    cout << "Результат операции:" << demo.DeterminingPageIndex(0) << endl;
+    cout << "Результат операции :" << demo.RecordElemenForIndex(55,55) << endl;
+    cout << "Результат операции :" << demo.RecordElemenForIndex(23,78) << endl;
+    cout << "Результат операции :" << demo.RecordElemenForIndex(23000,90) << endl;
+
+    cout << "---Запись значений с индексами: 0, 55, 23, 23000---" << endl;
+    cout << "---True - выполнено, False - не выполнено ---" << endl;
+    cout << "Результат операции:" << demo.ReadElementForIndex(0,element) <<"\tЭлемент:" << demo.numberForExam<< endl;
+    cout << "Результат операции:" << demo.ReadElementForIndex(55,element)<<"\tЭлемент:" <<  demo.numberForExam << endl;
+    cout << "Результат операции:" << demo.ReadElementForIndex(23,element)<<"\tЭлемент:" << demo.numberForExam << endl;
+    cout << "Результат операции:" << demo.ReadElementForIndex(23000,element) <<"\tЭлемент:" << demo.numberForExam<< endl;
+
 
     return 0;
 }

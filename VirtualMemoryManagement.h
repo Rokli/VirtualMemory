@@ -15,9 +15,13 @@ private:
     vector<Page> pagesBuffer;
     int pageLength;
     string filepath;
+    int size;
+
 public:
+     int numberForExam;
     VirtualMemoryManagement(string filepath = "memory.bin", int size = 3, int pageLength = 128)
     {
+        this->size = size;
         this->filepath = filepath;
         this->pageLength = pageLength;
         if(!filesystem::exists(filepath)) {
@@ -54,7 +58,7 @@ public:
             if(tmp.numberPage == numberPage)
                 return tmp.numberPage;
         }
-        for(int i = 0; index < pages.size();i++){
+        for(int i = 1; index < pages.size();i++){
             if(pages[i].pageTime < oldPage.pageTime){
                 indexOldestPage = i;
                 oldPage = pages[i];
@@ -65,8 +69,8 @@ public:
         }
         oldPage.pageTime = clock();
         oldPage.pageMode = true;
-        return indexOldestPage;
         vector<int> valuesArray = ByteToInt(valuesArrayByte);
+        return indexOldestPage;
     }
     void SavePage(Page page){
         for(Page tmp: this->pages){
@@ -87,9 +91,11 @@ public:
         recordFile.close();
     }
     bool ReadElementForIndex(int index, int* element){
+        if(index < 0 || index > size * pageLength)
+            return false;
         int indexElement= DeterminingPageIndex(index);
-        int addres = indexElement % pageLength;
-        element = &pages[indexElement].memoryValues[addres];
+        element = &pages[indexElement].memoryValues[index];
+        this->numberForExam = *element;
         return true;
     }
     vector<int> ByteToInt(vector<unsigned char> byte){
@@ -103,7 +109,9 @@ public:
         return array;
     }
     bool RecordElemenForIndex(int index,int element){
-        int indexElement =DeterminingPageIndex(index);
+        if(index < 0 || index > size * pageLength)
+            return false;
+        int indexElement = DeterminingPageIndex(index);
         int address = index % pageLength;
         this->pages[indexElement].memoryValues[address] = element;
         this->pages[indexElement].memoryByte[address] = 1;
